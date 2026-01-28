@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 </head>
 <body>
     <header>
@@ -24,8 +26,57 @@
             </a>
         </div>
     </header>
-    <main>
-        
-    </main>
+
+    <div class="swiper gallery">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide s01">
+          <section class="sec-1" id="sec-1">
+           <div class="tit-wrap">
+            <h2 class="tit" data-aos="fade-right">for About</h2>
+            <p class="txt" data-aos="fade-right" data-aos-delay="100">
+             이 페이지에 대해 좀더 자세히 알아보세요!
+            </p>
+            <a href="./pages/about.html" class="btn" data-aos="fade-right" data-aos-delay="200">More About</a>
+           </div>
+          </section>
+        </div>
+        <div class="swiper-slide s02">
+          <section class="sec-1" id="sec-1">
+           <div class="tit-wrap">
+            <h2 class="tit" data-aos="fade-up">for Contact</h2>
+            <p class="txt" data-aos="fade-up" data-aos-delay="100">
+                저희에게 연락을 하시려면 밑의 버튼을 누르시면 되요!
+            </p>
+            <a href="./pages/service.html" class="btn" data-aos="fade-up" data-aos-delay="200">Contact</a>
+           </div>
+          </section>
+        </div>
+        <div class="swiper-slide s03">
+          <section class="sec-1" id="sec-1">
+           <div class="tit-wrap">
+            <h2 class="tit" data-aos="fade-left">for Service</h2>
+            <p class="txt" data-aos="fade-left" data-aos-delay="100">
+             연출을 결과물에 들어가는 분야에서 텍스트로, 이용된다. 때로 글로도 시각
+             입숨은 시각 프로젝트 그래픽 로렘 내용이 때로 모형의 입숨을 표준 채우기
+             내용이 채우기 디자인 용도로 사용된다. 때 사용된다.
+            </p>
+            <a href="#" class="btn" data-aos="left" data-aos-delay="200">button</a>
+           </div>
+          </section>
+        </div>
+    
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+    AOS.init();
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>
