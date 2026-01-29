@@ -1,125 +1,163 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    /* ===== reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ===== common ===== */
+    .inner {
+      width: 1100px;
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* ===== header ===== */
+    header {
+      border-bottom: 1px solid #ddd;
+    }
+
+    header .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* ===== hero ===== */
+    .hero {
+      background: #f5f6fa;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #555;
+    }
+
+    /* ===== service slider ===== */
+    .service {
+      background: #fff;
+    }
+
+    .service-slider {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .slide-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .service-item {
+      min-width: 300px;
+      margin: 0 10px;
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #eee;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .service-item h3 {
+      margin-bottom: 10px;
+    }
+
+    .service-item p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* slider buttons */
+    .slide-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgb(16, 85, 128);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .slide-btn.prev {
+      left: -10px;
+    }
+
+    .slide-btn.next {
+      right: -10px;
+    }
+
+    /* ===== process ===== */
+    .process {
+      background: #fafafa;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-    line-height: 1.6;
+    .process-list {
+      display: flex;
+      gap: 20px;
+      text-align: center;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+    .process-item {
+      flex: 1;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #ddd;
 }
 
-ul {
-    list-style: none;
+    /* ===== footer ===== */
+    footer {
+      border-top: 1px solid #ddd;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 14px;
+      color: #777;
 }
 
-/* 공통 */
-.inner {
-    width: 1100px;
-    margin: 0 auto;
-    padding: 60px 0;
-}
-
-/* header */
-header {
-    border-bottom: 1px solid #ddd;
-}
-
-header .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
-nav ul {
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    font-weight: 600;
-}
-
-/* hero */
-.hero {
-    background: #f5f6fa;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    color: #555;
-}
-
-/* service */
-.service-list {
-    display: flex;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.service-item {
-    flex: 1;
-    border: 1px solid #ddd;
-    padding: 30px;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.service-item h3 {
-    margin-bottom: 10px;
-}
-
-.service-item p {
-    font-size: 14px;
-    color: #666;
-}
-
-/* process */
-.process {
-    background: #fafafa;
-}
-
-.process-list {
-    display: flex;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.process-item {
-    flex: 1;
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-}
-
-/* footer */
-footer {
-    border-top: 1px solid #ddd;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-    color: #777;
-}
-
-@media (max-width: 768px) {
+    /* ===== responsive ===== */
+@media (max-width: 900px) {
     .inner {
         width: 90%;
     }
 
-    .service-list,
     .process-list {
         flex-direction: column;
     }
