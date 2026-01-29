@@ -1,85 +1,97 @@
+/* 기본 초기화 */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: #373737;
-}
-
-main {
-  margin: auto;
-  max-width: 1200px;
-  padding: 100px 0;
-  background-color: aliceblue;
-  min-height: 100vh;
-}
-
-*{margin: 0;padding:0;box-sizing: border-box;}
-
-header {
-    width: 100%;
-    transition: all .3s;
-}
-
-.inner {
-    display: flex;
-    width: 100%;;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 15px;
-}
-
-
-.nav-list {
- display: flex;
- gap: 42px;
-}
-.nav-list a {
- display: block;
- color: #000000;
- font-weight: 600;
- text-transform: uppercase;
- font-size: 18px;
-}
-
-.mob-nav-btn{
-    display: none;
-}
-
-a{
-    text-decoration: none;
-    color:#373737
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 li {
     list-style: none;
 }
 
-header { 
+a {
+    text-decoration: none;
+    color: #373737;
+}
+
+/* Header 스타일 */
+header {
     width: 100%;
+    /* 헤더를 슬라이드 위에 띄우기 위해 절대 위치 사용 */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 10; /* 슬라이드보다 위에 오도록 설정 */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all .3s;
 }
 
+.inner {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* 로고와 메뉴가 너무 벌어지지 않게 제한 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+}
 
-/* Header End */
+header .inner h1 a {
+    color: #fff; /* 배경 이미지 위에서 잘 보이게 흰색 변경 (필요 시 수정) */
+    font-weight: 800;
+    font-size: 24px;
+}
 
-/* main Start */
+/* Nav 스타일 */
+.nav-list {
+    display: flex;
+    gap: 42px;
+}
 
+.nav-list a {
+    display: block;
+    color: #fff; /* 배경 이미지 위 가독성 위해 흰색 변경 */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* 텍스트 그림자 추가 */
+}
+
+.mob-nav-btn {
+    display: none;
+}
+
+/* Swiper Gallery 스타일 */
+.gallery {
+    width: 100%;
+    height: 100vh; /* 화면 전체 높이 사용 */
+}
+
+.gallery .swiper-button-prev,
+.gallery .swiper-button-next {
+    /* 이미지가 없으면 기본 화살표가 나오도록 fallback 처리 */
+    color: #fff; 
+}
+
+/* 사용자 지정 화살표 이미지 (이미지가 있다면 이 코드가 우선 적용됨) */
 .gallery .swiper-button-prev {
     background-image: url(../img/left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .gallery .swiper-button-next {
     background-image: url(../img/right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+/* SVG 숨김 (이미지 사용 시) */
 .gallery .swiper-button-prev svg,
-.gallery .swiper-button-next svg{
+.gallery .swiper-button-next svg {
     display: none;
 }
 
@@ -94,70 +106,80 @@ header {
 .gallery .swiper-pagination-bullet-active {
     width: 30px;
     opacity: 1;
-
 }
 
+/* Section 공통 스타일 */
 .sec-1 {
- display: flex;
- align-items: center;
- min-height: 100vh;
- margin: auto;
-}
-
-.s01 .sec-1 {
-  background: url(../img/sec-1-s01-bg.png) no-repeat center/cover;
-
-}
-.s02 .sec-1 {
-  background: url(../img/sec-1-s02-bg.png) no-repeat center/cover;
-
-}
-.s03 .sec-1 {
-  background: url(../img/sec-1-s03-bg.webp) no-repeat center/cover;
-
-}
-
-.s01 .sec-1 .tit-wrap {
-    justify-content: flex-start;
-    padding: 150px;
-}
-.s02 .sec-1 .tit-wrap {
-    justify-content: center;
-    padding: 150px;
-}
-.s03 .sec-1 .tit-wrap {
-    justify-content: flex-end;
-    padding: 150px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* min-height 대신 height로 고정하여 swiper와 일치 */
 }
 
 .tit-wrap {
-    position: relative;
-    justify-content: flex-start;
+    width: 100%;
+    max-width: 1200px; /* 텍스트 너비 제한 */
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.sec-1 .tit-wrap {
- color: #fff;
- 
+/* 각 슬라이드 배경 및 정렬 설정 */
+.s01 .sec-1 {
+    background: url(../img/sec-1-s01-bg.png) no-repeat center/cover;
 }
+.s01 .tit-wrap {
+    align-items: flex-start; /* 왼쪽 정렬 */
+    text-align: left;
+}
+
+.s02 .sec-1 {
+    background: url(../img/sec-1-s02-bg.png) no-repeat center/cover;
+}
+.s02 .tit-wrap {
+    align-items: center; /* 중앙 정렬 */
+    text-align: center;
+}
+
+.s03 .sec-1 {
+    background: url(../img/sec-1-s03-bg.webp) no-repeat center/cover;
+}
+.s03 .tit-wrap {
+    align-items: flex-end; /* 오른쪽 정렬 */
+    text-align: right;
+}
+
+/* 텍스트 스타일 */
 .sec-1 .tit-wrap .txt {
- margin: 30px auto 50px;
+    margin: 30px 0 50px;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 600px; /* 긴 텍스트 줄바꿈 유도 */
 }
 
 h2.tit {
-    font-size:clamp(35px, 4vw, 600px);
+    font-size: clamp(35px, 5vw, 80px); /* 폰트 사이즈 조정 */
     font-weight: 800;
 }
 
 a.btn {
     display: inline-flex;
-    width: clamp(156px, 16vw, 190px);
-    height: clamp(42px, 4.2vw, 47px);
+    width: clamp(150px, 15vw, 200px);
+    height: 50px;
     justify-content: center;
     align-items: center;
-    font-size: clamp(16px, 1.9vw, 22px);
-    font-weight: 900;
+    font-size: 18px;
+    font-weight: 700;
     background-color: #601086;
-    color:#fff;
+    color: #fff;
     text-transform: uppercase;
     border-radius: 47px;
+    transition: background-color 0.3s;
+}
+
+a.btn:hover {
+    background-color: #4a0b69;
 }
