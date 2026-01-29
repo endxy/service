@@ -1,6 +1,40 @@
+.contact-hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.67)),
+    url(../img/contact.jpg) no-repeat center/cover;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-inner h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero-inner p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.hero-btn {
+  padding: 12px 24px;
+  background: rgb(16, 85, 128);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
 .contact-title {
   text-align: center;
   padding: 60px 20px;
+}
+
+.contact-title h2 {
+  font-size: 40px;
 }
 
 .contact-info {
@@ -22,15 +56,16 @@
   gap: 15px;
 }
 
+.contact-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
 .contact-form .txtarea {
   display: flex;
   align-items: end;
   gap: 17px;
-}
-
-.contact-form input {
-  padding: 12px;
-  border: 1px solid #ccc;
 }
 
 .contact-form textarea {
@@ -39,6 +74,7 @@
   margin-top: 10px;
   padding: 12px;
   border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
 .contact-form button {
@@ -48,6 +84,33 @@
   border: none;
   cursor: pointer;
   border-radius: 10px;
+}
+.faq {
+  margin-top: 10px;
+}
+
+.faq h3 {
+  padding: 10px 5px;
+}
+
+.faq-list li {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.faq-list li:first-child {
+  border-top: 1px solid #ccc;
+}
+
+.faq-list p {
+  display: none;
+  margin-top: 10px;
+  border-top: 1px solid #000000;
+}
+
+.faq-list li.active p {
+  display: block;
 }
 
 .contact-img {
